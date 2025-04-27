@@ -1,0 +1,9 @@
+MarketWatchProcessor$Instrument.class
+pages\MarketWatchPage.class
+utils\Log.class
+pages\IndexHeatmapPage.class
+utils\WebDriverFactory.class
+MarketWatchProcessor.class
+tests\MarketWatchTest.class
+utils\ScreenshotUtil.class
+tests\IndexHeatmapTest.class

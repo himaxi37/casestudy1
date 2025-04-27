@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import pages.MarketWatchPage;
 
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -24,7 +25,10 @@ public class MarketWatchTest {
 
     @BeforeMethod
     public void setUp() {
-        driver = new EdgeDriver();
+        // Setup WebDriver for Edge
+        EdgeOptions options = new EdgeOptions();
+        options.addArguments("--headless"); // Optional: If you want to run headlessly
+        driver = new EdgeDriver(options);
         driver.get("https://www.bseindia.com/");
         
         // Initialize page objects
@@ -33,7 +37,7 @@ public class MarketWatchTest {
 
     @Test
     public void captureInstruments() throws IOException {
-    	
+
         // Navigate to Market Watch
         marketWatchPage.goToMarketWatch();
         
@@ -46,17 +50,21 @@ public class MarketWatchTest {
         
         // Add headers to Excel
         sheet.createRow(0).createCell(0).setCellValue("Instrument");
-        sheet.createRow(0).createCell(1).setCellValue("Underlying");
-        sheet.createRow(0).createCell(2).setCellValue("Notional Turnover");
+        sheet.createRow(0).createCell(1).setCellValue("Type of Instrument");
+        sheet.createRow(0).createCell(2).setCellValue("Underlying");
+        sheet.createRow(0).createCell(3).setCellValue("Notional Turnover");
+
         // Add rows to Excel file
         int rowNum = 1;
         for (WebElement row : rows) {
-            String instrument = row.findElement(By.xpath("td[1]")).getText();
+            String instrument = row.findElement(By.xpath("td[0]")).getText();
+            String typeOfInstrument = row.findElement(By.xpath("td[1]")).getText();
             String underlying = row.findElement(By.xpath("td[2]")).getText();
-            String notionalTurnover = row.findElement(By.xpath("td[10]")).getText();
+            String notionalTurnover = row.findElement(By.xpath("td[9]")).getText();
             
             // Write data to Excel
             sheet.createRow(rowNum).createCell(0).setCellValue(instrument);
+            sheet.createRow(rowNum).createCell(1).setCellValue(typeOfInstrument);
             sheet.createRow(rowNum).createCell(2).setCellValue(underlying);
             sheet.createRow(rowNum).createCell(3).setCellValue(notionalTurnover);
             
@@ -69,12 +77,11 @@ public class MarketWatchTest {
         fileOut.close();
         
         // Additional logic for grouping by type and underlying, and finding highest turnover can be added here
-        
     }
-
 
     @AfterMethod
     public void tearDown() {
         driver.quit();
     }
 }
+

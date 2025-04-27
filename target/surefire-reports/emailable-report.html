@@ -9,43 +9,56 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Surefire suite</th></tr>
-<tr><td><a href="#t0">Surefire test</a></td><td class="num">0</td><td class="num attn">1</td><td class="num">0</td><td class="num">0</td><td class="num">3,753</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Surefire test</a></td><td class="num">0</td><td class="num attn">2</td><td class="num">0</td><td class="num">0</td><td class="num">101</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">tests.MarketWatchTest</td><td><a href="#m0">setUp</a></td><td rowspan="1">1745730309604</td><td rowspan="1">3695</td></tr><tr><th colspan="4">Surefire test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">tests.MarketWatchTest</td><td><a href="#m1">tearDown</a></td><td rowspan="1">1745730313321</td><td rowspan="1">0</td></tr><tr><th colspan="4">Surefire test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">tests.MarketWatchTest</td><td><a href="#m2">captureInstruments</a></td><td rowspan="1">1745730313317</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Surefire suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Surefire test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">tests.IndexHeatmapTest</td><td><a href="#m0">setUp</a></td><td rowspan="1">1745739257441</td><td rowspan="1">53</td></tr><tr class="failedodd"><td rowspan="1">tests.MarketWatchTest</td><td><a href="#m1">setUp</a></td><td rowspan="1">1745739257515</td><td rowspan="1">1</td></tr><tr><th colspan="4">Surefire test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">tests.IndexHeatmapTest</td><td><a href="#m2">tearDown</a></td><td rowspan="1">1745739257512</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="1">tests.MarketWatchTest</td><td><a href="#m3">tearDown</a></td><td rowspan="1">1745739257518</td><td rowspan="1">0</td></tr><tr><th colspan="4">Surefire test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="1">tests.IndexHeatmapTest</td><td><a href="#m4">analyzeIndexHeatmap</a></td><td rowspan="1">1745739257510</td><td rowspan="1">1</td></tr><tr class="skippedodd"><td rowspan="1">tests.MarketWatchTest</td><td><a href="#m5">captureInstruments</a></td><td rowspan="1">1745739257517</td><td rowspan="1">0</td></tr></tbody>
 </table>
-<h2>Surefire test</h2><h3 id="m0">tests.MarketWatchTest#setUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:57364/devtools/browser/58cd75de-5afb-4564-b171-cca926023309
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;DESKTOP-CB4HQLB&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
-Driver info: driver.version: EdgeDriver
-	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
-	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
-	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:106)
-	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:77)
-	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
-	at java.base/java.util.Optional.map(Optional.java:260)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
-	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
+<h2>Surefire test</h2><h3 id="m0">tests.IndexHeatmapTest#setUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: The driver executable must exist: C:\msedgedriver.exe
+	at org.openqa.selenium.internal.Require$FileStateChecker.isFile(Require.java:342)
+	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:147)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:142)
+	at org.openqa.selenium.edge.EdgeDriverService.access$000(EdgeDriverService.java:40)
+	at org.openqa.selenium.edge.EdgeDriverService$Builder.findDefaultExecutable(EdgeDriverService.java:176)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:437)
 	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
 	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
-	at tests.MarketWatchTest.setUp(MarketWatchTest.java:27)
+	at tests.IndexHeatmapTest.setUp(IndexHeatmapTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">tests.MarketWatchTest#setUp</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: The driver executable must exist: C:\msedgedriver.exe
+	at org.openqa.selenium.internal.Require$FileStateChecker.isFile(Require.java:342)
+	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:147)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:142)
+	at org.openqa.selenium.edge.EdgeDriverService.access$000(EdgeDriverService.java:40)
+	at org.openqa.selenium.edge.EdgeDriverService$Builder.findDefaultExecutable(EdgeDriverService.java:176)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:437)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
+	at tests.MarketWatchTest.setUp(MarketWatchTest.java:31)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">tests.MarketWatchTest#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">tests.MarketWatchTest#captureInstruments</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.remote.http.ConnectionFailedException: Unable to establish websocket connection to http://localhost:57364/devtools/browser/58cd75de-5afb-4564-b171-cca926023309
-Build info: version: &apos;4.4.0&apos;, revision: &apos;e5c75ed026a&apos;
-System info: host: &apos;DESKTOP-CB4HQLB&apos;, ip: &apos;192.168.1.7&apos;, os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.5&apos;
-Driver info: driver.version: EdgeDriver
-	at org.openqa.selenium.remote.http.netty.NettyWebSocket.&lt;init&gt;(NettyWebSocket.java:102)
-	at org.openqa.selenium.remote.http.netty.NettyWebSocket.lambda$create$3(NettyWebSocket.java:128)
-	at org.openqa.selenium.remote.http.netty.NettyClient.openSocket(NettyClient.java:106)
-	at org.openqa.selenium.devtools.Connection.&lt;init&gt;(Connection.java:77)
-	at org.openqa.selenium.chromium.ChromiumDriver.lambda$new$2(ChromiumDriver.java:116)
-	at java.base/java.util.Optional.map(Optional.java:260)
-	at org.openqa.selenium.chromium.ChromiumDriver.&lt;init&gt;(ChromiumDriver.java:114)
-	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:54)
+<h3 id="m2">tests.IndexHeatmapTest#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">tests.MarketWatchTest#tearDown</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">tests.IndexHeatmapTest#analyzeIndexHeatmap</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: The driver executable must exist: C:\msedgedriver.exe
+	at org.openqa.selenium.internal.Require$FileStateChecker.isFile(Require.java:342)
+	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:147)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:142)
+	at org.openqa.selenium.edge.EdgeDriverService.access$000(EdgeDriverService.java:40)
+	at org.openqa.selenium.edge.EdgeDriverService$Builder.findDefaultExecutable(EdgeDriverService.java:176)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:437)
 	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
 	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:42)
-	at tests.MarketWatchTest.setUp(MarketWatchTest.java:27)
+	at tests.IndexHeatmapTest.setUp(IndexHeatmapTest.java:22)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">tests.MarketWatchTest#captureInstruments</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IllegalStateException: The driver executable must exist: C:\msedgedriver.exe
+	at org.openqa.selenium.internal.Require$FileStateChecker.isFile(Require.java:342)
+	at org.openqa.selenium.remote.service.DriverService.checkExecutable(DriverService.java:147)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:142)
+	at org.openqa.selenium.edge.EdgeDriverService.access$000(EdgeDriverService.java:40)
+	at org.openqa.selenium.edge.EdgeDriverService$Builder.findDefaultExecutable(EdgeDriverService.java:176)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:437)
+	at org.openqa.selenium.edge.EdgeDriver.&lt;init&gt;(EdgeDriver.java:46)
+	at tests.MarketWatchTest.setUp(MarketWatchTest.java:31)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 ... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>

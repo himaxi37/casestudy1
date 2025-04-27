@@ -3,6 +3,13 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
+      <class name="tests.IndexHeatmapTest">
+        <methods>
+          <include name="analyzeIndexHeatmap"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- tests.IndexHeatmapTest -->
       <class name="tests.MarketWatchTest">
         <methods>
           <include name="captureInstruments"/>
