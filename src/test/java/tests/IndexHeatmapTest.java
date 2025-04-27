@@ -2,6 +2,7 @@ package tests;
 
 import pages.IndexHeatmapPage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -22,7 +23,8 @@ public class IndexHeatmapTest {
         driver = new EdgeDriver();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
-        driver.get("https://bseindia.com/markets.html");
+        driver.get("https://bseindia.com/");
+        driver.findElement(By.linkText("Markets"));
 
         heatmapPage = new IndexHeatmapPage(driver);
     }

@@ -13,7 +13,7 @@ public class IndexHeatmapPage {
     }
 
     // Locator for all index cards in Index Heatmap
-    private By indexCards = By.xpath("//div[contains(@class, 'col-lg-2') or contains(@class, 'col-md-3')]");
+    private By indexCards = By.xpath("//div[contains(@class, 'boxred ng-scope')]");
 
     public List<WebElement> getAllIndexCards() {
         return driver.findElements(indexCards);

@@ -12,8 +12,8 @@ import java.util.List;
 public class MarketWatchPage {
 
     private WebDriver driver;
-    private By marketWatchButton = By.linkText("ETF Market Watch"); // Modify with actual element
-    private By instrumentTable = By.xpath("//div[@class='largetable']"); // Modify with actual table id
+    private By marketWatchButton = By.id("mwatch"); // Modify with actual element
+    private By instrumentTable = By.xpath("//div[@class='largetable drimktwdiv fixTableHead']"); // Modify with actual table id
 
     public MarketWatchPage(WebDriver driver) {
         this.driver = driver;
@@ -27,6 +27,6 @@ public class MarketWatchPage {
     public List<WebElement> getInstrumentRows() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
         wait.until(ExpectedConditions.visibilityOfElementLocated(instrumentTable));
-        return driver.findElements(By.xpath("//table[@id='ContentPlaceHolder1_GridView1']//tr"));
+        return driver.findElements(By.xpath("//table[@class='ng-scope']//tr"));
     }
 }
